@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+ <sim include="Nasal/views.xml">
+
+  <description>Yakolev-15</description>
+  <author>Detlef FaberLesterBoffo-3D and animation</author>
+  <status>Alpha 0.1</status>
+ 
+  <flight-model>yasim</flight-model>
+  <aero>yak15-yasim</aero>
+  
+  <fuel-fraction>1.0</fuel-fraction>
+  
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/Yak-15/Sounds/Yak-15-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/Yak-15/Models/Yak-15.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/Yak-15/Models/effects/guns/submodels.xml</path>
+    </submodels>
+
+    <startup>
+     <splash-texture>Aircraft/Yak-15/splash.jpg</splash-texture>
+    </startup>
+
+      <flaps>
+        <setting>0.000</setting>
+        <setting>0.18</setting>
+        <setting>0.28</setting> 
+        <setting>0.60</setting>
+        <setting>0.750</setting>
+        <setting>1.000</setting>
+    </flaps>
+
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+
+
+    <help>
+      <title>Yak-15</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+	  <name>Ctrl-J</name>
+	  <desc>jettison droptanks</desc>
+	</key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/Yak-15-menu.xml"/>
+
+     <!-- Payload -->
+  <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>160</weight-lb>
+      <max-lb>220</max-lb>
+      <min-lb>120</min-lb>
+  </weight> 
+
+  </sim>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>true</running>
+    </engine>
+  </engines>
+
+  <controls>
+    <armament>
+     <trigger type="bool">false</trigger>
+     <master-arm type="bool">true</master-arm>
+     <position-norm type="int">1</position-norm>
+    </armament>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/Yak-15-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <Yak-15>
+      <file>Aircraft/Yak-15/Nasal/doors.nas</file>
+     <!-- <file>Aircraft/Yak-15/Nasal/liveries.nas</file> -->
+    </Yak-15>
+    <guns>
+      <file>Aircraft/Yak-15/Nasal/weapons.nas</file>
+      <file>Aircraft/Yak-15/Nasal/revi.nas</file>
+    </guns>
+  </nasal>
+
+</PropertyList>
+
